@@ -2,18 +2,22 @@ import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import connectDB from "./db/connect.js";
+import authRoutes from "./routes/authRoutes.js";
+import codeRoutes from "./routes/codeRoutes.js";
 
 //Middleware
 import notFound from "./middleware/not-found.js";
 import errorHandler from "./middleware/error-handler.js";
 
 const app = express();
-
+app.use(express.json());
 //Routes
 app.get("/", (req, res) => {
-  //throw new Error("Something strange just happened!!");
   res.send("Welcome to the concept app!");
 });
+
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/code", codeRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
