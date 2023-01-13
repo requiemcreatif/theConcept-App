@@ -30,6 +30,10 @@ The Concept Box is an app that makes it easier for programmers to find explanati
 
 - A community forum or discussion board, where users can ask for help or share their own knowledge with others.
 
+## Login functionalities:
+
+- User validation with .
+
 ## References:
 
 ## Next features
