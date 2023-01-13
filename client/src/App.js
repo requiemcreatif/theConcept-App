@@ -1,3 +1,7 @@
+import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
 import SearchBar from "./components/SearchBar";
 import Display from "./components/Display";
 import { DATABASE } from "./database";
@@ -32,7 +36,7 @@ function App() {
       return (
         titleLowerCase.startsWith(inputLowerCase) ||
         descriptionLowerCase.includes(inputLowerCase) ||
-        (!isNaN(input) && (item.id == input || titleLowerCase.includes(inputLowerCase)))
+        (!isNaN(input) && (item.id === input || titleLowerCase.includes(inputLowerCase)))
       );
     });
     console.log(input);
@@ -45,7 +49,19 @@ function App() {
   };
   return (
     <div className="App">
-      <SearchBar
+      <BrowserRouter>
+        <nav>
+          <Link to="/">Dashboard</Link>
+          <Link to="/register">Register</Link>
+          <Link to="/homepage">Homepage</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/homepage" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <SearchBar
         input={input}
         setInput={setInput}
         search={search}
@@ -62,7 +78,7 @@ function App() {
         results={results}
         searchPerformed={searchPerformed}
         showResults={showResults}
-      />
+      /> */}
     </div>
   );
 }
