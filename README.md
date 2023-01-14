@@ -42,4 +42,7 @@ The Concept Box is an app that makes it easier for programmers to find explanati
 
 ## packages:
 
-- Express-async-errors to replace try and catch error handler
+- Express-async-errors to replace try and catch error handler (no need to use next function)
+
+- http-status-codes
+- bcryptjs to hash user passwords
