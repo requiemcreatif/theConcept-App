@@ -32,6 +32,14 @@ The Concept Box is an app that makes it easier for programmers to find explanati
 
 ## References:
 
+## Current features:
+
+- Aauthentication with Json Web Token
+
 ## Next features
 
 - Integration with online coding environments or IDEs, so users can test out code snippets and examples directly within the app.
+
+## packages:
+
+- Express-async-errors to replace try and catch error handler
